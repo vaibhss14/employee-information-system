@@ -61,18 +61,6 @@ Employee Information System is a web-based HRMS application developed using Lara
 * Actions
 * Role-Based Access
 
-## Technologies Used
-
-* Laravel 13
-* PHP 8.3
-* Livewire
-* Filament 5
-* Tailwind CSS
-* MySQL
-* Vite
-* WSL Ubuntu
-* Git & GitHub
-
 ## Database Relationships
 
 * Department hasMany Employees
@@ -103,5 +91,3 @@ php artisan serve
 ## Author
 
 **Vaibhavi Bendre**
-
-Final Year BSc IT Graduate
