@@ -20,7 +20,7 @@ class EmployeesPage extends Component
 
     public function loadEmployees()
     {
-        $this->employees = Employee::with('department')->get();
+        $this->employees = Employee::with('department')->get();  
     }
 
     

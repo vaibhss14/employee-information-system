@@ -9,6 +9,8 @@ use App\Livewire\LeavesPage;
 use App\Livewire\DepartmentPage;
 use App\Livewire\ApplyLeavePage;
 
+Route::redirect('/', '/login');
+
 Route::middleware(['auth'])->group(function () {
 
     Route::get('/dashboard', HomePage::class)
@@ -26,9 +28,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/departments', DepartmentPage::class)
         ->name('departments');
 
-        Route::get('/leave/apply', ApplyLeavePage::class)
-    
-    ->name('leave.apply');
+    Route::get('/leave/apply', ApplyLeavePage::class)
+        ->name('leave.apply');
 });
 
 require __DIR__.'/auth.php';

@@ -16,7 +16,9 @@ return new class extends Migration
     $table->string('name');
     $table->string('email')->unique();
     $table->string('phone')->nullable();
-    $table->string('department');
+    $table->foreignId('department_id')
+      ->constrained()
+      ->cascadeOnDelete();
     $table->decimal('salary', 10, 2);
     $table->date('joining_date');
     $table->string('photo')->nullable();

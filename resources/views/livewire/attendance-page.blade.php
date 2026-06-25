@@ -7,17 +7,17 @@
             <h1 class="text-5xl font-bold text-slate-800">
                 Attendance
             </h1>
-
             <p class="text-slate-500 mt-2">
                 Track employee attendance records.
             </p>
         </div>
 
         @if(auth()->user()->role === 'admin')
-    <a href="/admin/attendances/create">
-        + Mark Attendance
-    </a>
-@endif
+            <a href="/admin/attendances/create"
+                 class="bg-emerald-900 text-white px-6 py-3 rounded-xl">
+                + Mark Attendance
+            </a>
+        @endif
 
     </div>
 

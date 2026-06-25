@@ -4,10 +4,12 @@ namespace App\Models;
 use App\Models\Department;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Employee extends Model
 {
-    protected $fillable = [
+    use HasFactory;
+        protected $fillable = [
         'employee_code',
         'name',
         'email',
