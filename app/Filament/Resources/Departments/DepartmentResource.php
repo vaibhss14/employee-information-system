@@ -32,7 +32,6 @@ class DepartmentResource extends Resource
         return DepartmentsTable::configure($table);
     }
 
-    
     public static function getPages(): array
     {
         return [
@@ -43,7 +42,7 @@ class DepartmentResource extends Resource
     }
 
     public static function canViewAny(): bool
-{
-    return auth()->user()->role === 'admin';
-}
+    {
+        return auth()->user()->role === 'admin';
+    }
 }

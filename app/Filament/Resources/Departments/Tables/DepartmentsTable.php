@@ -29,6 +29,5 @@ class DepartmentsTable
                 DeleteAction::make(),
             ]);
 
-            
     }
 }

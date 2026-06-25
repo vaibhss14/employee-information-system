@@ -16,6 +16,4 @@ class ListEmployees extends ListRecords
             CreateAction::make(),
         ];
     }
-
-    
 }

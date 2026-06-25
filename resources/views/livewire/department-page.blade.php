@@ -30,6 +30,7 @@ $departments = Department::withCount('employees')->get();
             
         </div>
 
+        
         <table class="w-full">
 
             <thead class="bg-slate-100">

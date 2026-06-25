@@ -10,15 +10,15 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-{
-    Schema::create('attendances', function (Blueprint $table) {
-        $table->id();
-        $table->foreignId('employee_id')->constrained()->cascadeOnDelete();
-        $table->date('date');
-        $table->enum('status', ['Present', 'Absent', 'Late']);
-        $table->timestamps();
-    });
-}
+    {
+        Schema::create('attendances', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('employee_id')->constrained()->cascadeOnDelete();
+            $table->date('date');
+            $table->enum('status', ['present', 'absent', 'late']);
+            $table->timestamps();
+        });
+    }
 
     /**
      * Reverse the migrations.

@@ -22,10 +22,10 @@ class UserResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'name';
 
-   public static function form(Schema $schema): Schema
-{
-    return UserForm::form($schema);
-}
+    public static function form(Schema $schema): Schema
+    {
+        return UserForm::form($schema);
+    }
 
     public static function table(Table $table): Table
     {
@@ -39,11 +39,10 @@ class UserResource extends Resource
         ];
     }
 
-    
     public static function canViewAny(): bool
-{
-    return auth()->user()?->role === 'admin';
-}
+    {
+        return auth()->user()?->role === 'admin';
+    }
 
     public static function getPages(): array
     {

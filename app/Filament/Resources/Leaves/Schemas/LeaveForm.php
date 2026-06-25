@@ -2,10 +2,10 @@
 
 namespace App\Filament\Resources\Leaves\Schemas;
 
-use Filament\Schemas\Schema;
-use Filament\Forms\Components\Select;
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
+use Filament\Schemas\Schema;
 
 class LeaveForm
 {
@@ -14,36 +14,36 @@ class LeaveForm
         return $schema
             ->components([
                 Select::make('employee_id')
-    ->relationship('employee', 'name')
-    ->searchable()
-    ->required(),
+                    ->relationship('employee', 'name')
+                    ->searchable()
+                    ->required(),
 
-Select::make('leave_type')
-    ->options([
-        'Sick Leave' => 'Sick Leave',
-        'Casual Leave' => 'Casual Leave',
-        'Annual Leave' => 'Annual Leave',
-        'Maternity Leave' => 'Maternity Leave',
-    ])
-    ->required(),
+                Select::make('leave_type')
+                    ->options([
+                        'Sick Leave' => 'Sick Leave',
+                        'Casual Leave' => 'Casual Leave',
+                        'Annual Leave' => 'Annual Leave',
+                        'Maternity Leave' => 'Maternity Leave',
+                    ])
+                    ->required(),
 
-DatePicker::make('start_date')
-    ->required(),
+                DatePicker::make('start_date')
+                    ->required(),
 
-DatePicker::make('end_date')
-    ->required(),
+                DatePicker::make('end_date')
+                    ->required(),
 
-Textarea::make('reason'),
+                Textarea::make('reason'),
 
-Select::make('status')
-    ->options([
-        'Pending' => 'Pending',
-        'Approved' => 'Approved',
-        'Rejected' => 'Rejected',
-    ])
-    ->default('Pending')
-    ->required(),
-               
+                Select::make('status')
+                    ->options([
+                        'pending' => 'Pending',
+                        'approved' => 'Approved',
+                        'rejected' => 'Rejected',
+                    ])
+                    ->default('pending')
+                    ->required(),
+
             ]);
     }
 }

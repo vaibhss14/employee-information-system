@@ -28,9 +28,9 @@ class LeaveFactory extends Factory
             'reason' => fake()->sentence(),
 
             'status' => fake()->randomElement([
-                'Pending',
-                'Approved',
-                'Rejected',
+                'pending',
+                'approved',
+                'rejected',
             ]),
         ];
     }

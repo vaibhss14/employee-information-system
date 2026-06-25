@@ -26,14 +26,14 @@
         <div class="bg-white p-6 rounded-3xl shadow-xl">
             <p class="text-gray-500">Present Today</p>
             <h2 class="text-4xl font-bold text-green-600">
-                {{ $attendances->where('status','Present')->count() }}
+                {{ $attendances->where('status','present')->count() }}
             </h2>
         </div>
 
         <div class="bg-white p-6 rounded-3xl shadow-xl">
             <p class="text-gray-500">Absent</p>
             <h2 class="text-4xl font-bold text-red-500">
-                {{ $attendances->where('status','Absent')->count() }}
+                {{ $attendances->where('status','absent')->count() }}
             </h2>
         </div>
 

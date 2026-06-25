@@ -2,16 +2,18 @@
 
 namespace App\Livewire;
 
-use Livewire\Component;
 use App\Models\Employee;
+use Livewire\Component;
 
 class EmployeesPage extends Component
 {
     public $employees;
 
+    public $search = '';
+
     public function mount()
     {
-        if (!auth()->check()) {
+        if (! auth()->check()) {
             return redirect('/login');
         }
 
@@ -20,13 +22,12 @@ class EmployeesPage extends Component
 
     public function loadEmployees()
     {
-        $this->employees = Employee::with('department')->get();  
+        $this->employees = Employee::with('department')->get();
     }
 
-    
     public function delete($id)
     {
-       if (auth()->user()->role !== 'admin') {
+        if (auth()->user()->role !== 'admin') {
             return;
         }
 

@@ -7,7 +7,6 @@ use App\Filament\Resources\Leaves\Pages\EditLeave;
 use App\Filament\Resources\Leaves\Pages\ListLeaves;
 use App\Filament\Resources\Leaves\Schemas\LeaveForm;
 use App\Filament\Resources\Leaves\Tables\LeavesTable;
-
 use App\Models\Leave;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -49,9 +48,8 @@ class LeaveResource extends Resource
         ];
     }
 
-    
-   public static function canViewAny(): bool
-{
-    return auth()->user()->role === 'admin';
-}
+    public static function canViewAny(): bool
+    {
+        return auth()->user()->role === 'admin';
+    }
 }

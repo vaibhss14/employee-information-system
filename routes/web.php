@@ -1,13 +1,12 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
-use App\Livewire\HomePage;
-use App\Livewire\EmployeesPage;
-use App\Livewire\AttendancePage;
-use App\Livewire\LeavesPage;
-use App\Livewire\DepartmentPage;
 use App\Livewire\ApplyLeavePage;
+use App\Livewire\AttendancePage;
+use App\Livewire\DepartmentPage;
+use App\Livewire\EmployeesPage;
+use App\Livewire\HomePage;
+use App\Livewire\LeavesPage;
+use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/login');
 

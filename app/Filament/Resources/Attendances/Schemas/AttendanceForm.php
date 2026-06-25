@@ -24,9 +24,9 @@ class AttendanceForm
 
                 Select::make('status')
                     ->options([
-                        'Present' => 'Present',
-                        'Absent' => 'Absent',
-                        'Late' => 'Late',
+                        'present' => 'Present',
+                        'absent' => 'Absent',
+                        'late' => 'Late',
                     ])
                     ->required(),
             ]);

@@ -30,21 +30,21 @@
         <div class="bg-white p-6 rounded-3xl shadow-xl">
             <p class="text-gray-500">Approved</p>
             <h2 class="text-4xl font-bold text-green-600">
-                {{ $leaves->where('status','Approved')->count() }}
+                {{ $leaves->where('status','approved')->count() }}
             </h2>
         </div>
 
         <div class="bg-white p-6 rounded-3xl shadow-xl">
             <p class="text-gray-500">Pending</p>
             <h2 class="text-4xl font-bold text-yellow-500">
-                {{ $leaves->where('status','Pending')->count() }}
+                {{ $leaves->where('status','pending')->count() }}
             </h2>
         </div>
 
         <div class="bg-white p-6 rounded-3xl shadow-xl">
             <p class="text-gray-500">Rejected</p>
             <h2 class="text-4xl font-bold text-red-500">
-                {{ $leaves->where('status','Rejected')->count() }}
+                {{ $leaves->where('status','rejected')->count() }}
             </h2>
         </div>
 
@@ -98,11 +98,11 @@
 
                     <td class="p-4">
 
-                        @if($leave->status == 'Approved')
+                        @if($leave->status == 'approved')
                             <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full">
                                 Approved
                             </span>
-                        @elseif($leave->status == 'Pending')
+                        @elseif($leave->status == 'pending')
                             <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full">
                                 Pending
                             </span>

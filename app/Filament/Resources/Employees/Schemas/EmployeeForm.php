@@ -7,7 +7,6 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
-
 class EmployeeForm
 {
     public static function configure(Schema $schema): Schema
@@ -25,11 +24,11 @@ class EmployeeForm
                 TextInput::make('phone')
                     ->tel(),
 
-               Select::make('department_id')
-    ->relationship('department', 'name')
-    ->searchable()
-    ->preload()
-    ->required(),
+                Select::make('department_id')
+                    ->relationship('department', 'name')
+                    ->searchable()
+                    ->preload()
+                    ->required(),
 
                 TextInput::make('salary')
                     ->numeric()

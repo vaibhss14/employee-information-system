@@ -15,9 +15,9 @@ class AttendanceFactory extends Factory
             'date' => fake()->date(),
 
             'status' => fake()->randomElement([
-                'Present',
-                'Absent',
-                'Late',
+                'present',
+                'absent',
+                'late',
             ]),
         ];
     }

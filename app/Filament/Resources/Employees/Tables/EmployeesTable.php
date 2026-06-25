@@ -7,8 +7,6 @@ use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-
-
 class EmployeesTable
 {
     public static function configure(Table $table): Table
@@ -16,11 +14,9 @@ class EmployeesTable
         return $table
             ->columns([
 
-            TextColumn::make('employee_code')
-    ->label('Employee ID')
-    ->searchable()
-    ->sortable(),
-
+                TextColumn::make('id')
+                    ->label('Employee ID')
+                    ->sortable(),
 
                 TextColumn::make('name')
                     ->searchable()
@@ -32,9 +28,9 @@ class EmployeesTable
                 TextColumn::make('phone'),
 
                 TextColumn::make('department.name')
-    ->label('Department')
-    ->searchable()
-    ->sortable(),
+                    ->label('Department')
+                    ->searchable()
+                    ->sortable(),
 
                 TextColumn::make('salary'),
 

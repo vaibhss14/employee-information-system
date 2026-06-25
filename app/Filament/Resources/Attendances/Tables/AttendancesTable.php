@@ -25,9 +25,9 @@ class AttendancesTable
                 TextColumn::make('status')
                     ->badge()
                     ->color(fn (string $state): string => match ($state) {
-                        'Present' => 'success',
-                        'Absent' => 'danger',
-                        'Late' => 'warning',
+                        'present' => 'success',
+                        'absent' => 'danger',
+                        'late' => 'warning',
                         default => 'gray',
                     }),
 

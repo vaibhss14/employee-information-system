@@ -53,6 +53,7 @@
     </div>
 
     
+
     <!-- Employee Table -->
     <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
 
@@ -69,7 +70,6 @@
 
                 <thead class="bg-slate-100">
                     <tr>
-                        <th class="p-4 text-left">Code</th>
                         <th class="p-4 text-left">Name</th>
                         <th class="p-4 text-left">Email</th>
                         <th class="p-4 text-left">Department</th>
@@ -84,10 +84,6 @@
                     @foreach($employees as $employee)
 
                     <tr class="border-b hover:bg-slate-50 transition">
-
-                        <td class="p-4 font-medium">
-                            {{ $employee->employee_code }}
-                        </td>
 
                         <td class="p-4">
                             {{ $employee->name }}

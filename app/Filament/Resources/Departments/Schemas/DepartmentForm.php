@@ -2,10 +2,9 @@
 
 namespace App\Filament\Resources\Departments\Schemas;
 
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
-use Filament\Forms\Components\Select;
 
 class DepartmentForm
 {
