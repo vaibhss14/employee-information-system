@@ -18,6 +18,6 @@ class DatabaseSeeder extends Seeder
             LeaveSeeder::class,
             AttendanceSeeder::class,
         ]);
-        
+
     }
 }
