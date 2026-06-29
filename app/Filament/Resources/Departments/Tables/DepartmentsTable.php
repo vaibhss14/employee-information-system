@@ -13,21 +13,37 @@ class DepartmentsTable
     {
         return $table
             ->columns([
+
                 TextColumn::make('name')
+                    ->label('Department')
                     ->searchable()
-                    ->sortable(),
+                    ->sortable()
+                    ->weight('bold')
+                    ->icon('heroicon-o-building-office'),
 
                 TextColumn::make('description')
-                    ->limit(50),
+                    ->limit(50)
+                    ->toggleable(),
+
+                TextColumn::make('employees_count')
+                    ->label('Employees')
+                    ->counts('employees')
+                    ->badge()
+                    ->color('success')
+                    ->sortable(),
 
                 TextColumn::make('created_at')
-                    ->dateTime()
+                    ->label('Created')
+                    ->date('d M Y')
                     ->sortable(),
+
             ])
+
+            ->defaultSort('name')
+
             ->recordActions([
                 EditAction::make(),
                 DeleteAction::make(),
             ]);
-
     }
 }
