@@ -1,6 +1,5 @@
 
-
-<div class="max-w-7xl mx-auto px-6 py-10">
+<div class="max-w-screen-2xl mx-auto px-8 py-10">
 
     <!-- Header -->
     <div class="flex justify-between items-center mb-8">
@@ -9,18 +8,14 @@
             <h1 class="text-5xl font-bold text-slate-800">
                 Leaves
             </h1>
-
-            <p class="text-slate-500 mt-2">
-                Manage employee leave requests.
-            </p>
         </div>
 
-      @if(auth()->user()->role === 'admin')
+    
     <a href="{{ route('leave.apply') }}"
        class="bg-orange-500 text-white px-6 py-3 rounded-xl">
         + Apply Leave
     </a>
-@endif
+
 
     </div>
 
@@ -61,15 +56,16 @@
 
         <table class="w-full">
 
-            <thead class="bg-slate-100">
+            <thead class="bg-slate-200">
                 <tr>
                     <th class="p-4 text-left">Employee</th>
                     <th class="p-4 text-left">Leave Type</th>
                     <th class="p-4 text-left">Start Date</th>
                     <th class="p-4 text-left">End Date</th>
+                     <th class="p-4 text-left">Status</th>
                     @if(auth()->user()->role === 'admin')
-    <th class="p-4 text-center w-40">Actions</th>
-@endif
+                    <th class="p-4 text-center w-40">Actions</th>
+                    @endif
 
                 </tr>
             </thead>
@@ -81,20 +77,20 @@
                 <tr class="border-b">
 
                    <td class="p-4">
-    {{ $leave->employee->name ?? 'N/A' }}
-</td>
+                        {{ $leave->employee->name ?? 'N/A' }}
+                    </td>
 
-<td class="p-4">
-    {{ $leave->leave_type }}
-</td>
+                    <td class="p-4">
+                        {{ $leave->leave_type }}
+                    </td>
 
-<td class="p-4">
-    {{ $leave->start_date }}
-</td>
+                    <td class="p-4">
+                        {{ $leave->start_date }}
+                    </td>
 
-<td class="p-4">
-    {{ $leave->end_date }}
-</td>
+                    <td class="p-4">
+                        {{ $leave->end_date }}
+                    </td>
 
                     <td class="p-4">
 

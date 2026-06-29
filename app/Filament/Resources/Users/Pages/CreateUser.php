@@ -12,15 +12,16 @@ class CreateUser extends CreateRecord
 
     protected function afterCreate(): void
     {
-        if (in_array($this->record->role, ['employee', 'hr'])) {
+        if ($this->record->role === 'employee') {
 
             Employee::create([
+                'user_id' => $this->record->id,
                 'name' => $this->record->name,
                 'email' => $this->record->email,
-                'salary' => 0,
-                'joining_date' => now()->toDateString(),
-                'phone' => null,
-                'department_id' => null,
+                'salary' => $this->data['salary'] ?? 0,
+                'joining_date' => $this->data['joining_date'] ?? now()->toDateString(),
+                'phone' => $this->data['phone'] ?? null,
+                'department_id' => $this->data['department_id'],
             ]);
         }
     }

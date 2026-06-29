@@ -2,8 +2,11 @@
 
 namespace App\Filament\Resources\Users\Schemas;
 
-use Filament\Forms;
+use App\Models\Department;
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Schema;
 
 class UserForm
@@ -12,6 +15,7 @@ class UserForm
     {
         return $schema
             ->schema([
+
                 TextInput::make('name')
                     ->required(),
 
@@ -26,12 +30,33 @@ class UserForm
                     ->dehydrateStateUsing(fn ($state) => bcrypt($state))
                     ->dehydrated(fn ($state) => filled($state)),
 
-                Forms\Components\Select::make('role')
+                Select::make('role')
                     ->options([
                         'admin' => 'Admin',
                         'employee' => 'Employee',
                     ])
+                    ->live()
                     ->required(),
+
+                Select::make('department_id')
+                    ->label('Department')
+                    ->options(Department::pluck('name', 'id')->toArray())
+                    ->visible(fn (Get $get) => $get('role') === 'employee')
+                    ->required(fn (Get $get) => $get('role') === 'employee'),
+
+                TextInput::make('phone')
+                    ->tel()
+                    ->visible(fn (Get $get) => $get('role') === 'employee'),
+
+                TextInput::make('salary')
+                    ->numeric()
+                    ->default(0)
+                    ->visible(fn (Get $get) => $get('role') === 'employee'),
+
+                DatePicker::make('joining_date')
+                    ->default(now())
+                    ->visible(fn (Get $get) => $get('role') === 'employee'),
+
             ]);
     }
 }

@@ -2,7 +2,7 @@
 <div class="min-h-screen bg-gradient-to-br from-slate-100 via-indigo-50 to-purple-100">
 
 
-<div class="max-w-7xl mx-auto px-6 py-10">
+<div class="max-w-screen-2xl mx-auto px-8 py-10">
 
     <!-- Header -->
     <div class="flex justify-between items-center mb-8">
@@ -12,17 +12,14 @@
                 Employees
             </h1>
 
-            <p class="text-slate-500 mt-2">
-                Manage all employee records.
-            </p>
         </div>
 
        @if(auth()->user()->role === 'admin')
-    <a href="/admin/employees/create"
-    class="bg-orange-500 text-white px-6 py-3 rounded-xl">
-        + Add Employee
-    </a>
-@endif
+        <a href="/admin/employees/create"
+        class="bg-orange-500 text-white px-6 py-3 rounded-xl">
+            + Add Employee
+        </a>
+        @endif
 
     </div>
 

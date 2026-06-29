@@ -11,7 +11,7 @@ class Employee extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id',
+        'user_id',
         'name',
         'email',
         'phone',
@@ -38,19 +38,5 @@ class Employee extends Model
     public function department(): BelongsTo
     {
         return $this->belongsTo(Department::class);
-    }
-
-    protected static function booted()
-    {
-        static::creating(function ($employee) {
-
-            $lastEmployee = Employee::latest('id')->first();
-
-            $number = $lastEmployee
-                ? ((int) substr($lastEmployee->id, 3)) + 1
-                : 1;
-
-            $employee->id = 'EMP'.str_pad($number, 3, '0', STR_PAD_LEFT);
-        });
     }
 }

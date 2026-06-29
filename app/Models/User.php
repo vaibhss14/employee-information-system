@@ -37,11 +37,6 @@ class User extends Authenticatable implements FilamentUser
         return $this->role === 'admin';
     }
 
-    public function leaves()
-    {
-        return $this->hasMany(Leave::class);
-    }
-
     public function employee()
     {
         return $this->hasOne(Employee::class);
